@@ -36,11 +36,9 @@ const App = () => {
                 email: "",
                 password: ""
             })
-            setTimeout(() => {
-                console.log("Logged In Successfully")
-                email.current.value = ""
-                password.current.value = ""
-            }, 3000)
+            console.log("Logged In Successfully")
+            email.current.value = ""
+            password.current.value = ""
         }
     }
 
