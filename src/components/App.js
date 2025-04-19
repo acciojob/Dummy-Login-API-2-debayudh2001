@@ -31,15 +31,17 @@ const App = () => {
 
     function handleSubmit(e) {
         e.preventDefault()
-        setTimeout(() => {
-            if (validateForm(email.current.value, password.current.value)) {
-                setError({
-                    email: "",
-                    password: ""
-                })
+        if (validateForm(email.current.value, password.current.value)) {
+            setError({
+                email: "",
+                password: ""
+            })
+            setTimeout(() => {
                 console.log("Logged In Successfully")
-            }
-        }, 3000)
+                email.current.value = ""
+                password.current.value = ""
+            }, 3000)
+        }
     }
 
     //console.log(error)
