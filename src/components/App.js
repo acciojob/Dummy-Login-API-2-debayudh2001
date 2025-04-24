@@ -51,11 +51,11 @@ const App = () => {
             <form onSubmit={handleSubmit}>
                 <input id="input-email" ref={email} type="text" placeholder="Enter your email" />
                 <br />
-                {error.email && <span id="user-error" style={{ color: "red" }}>{error.email}</span>}
+                <span id="user-error" style={{ color: "red" }}>{error.email}</span>
                 <br />
                 <input id="input-password" ref={password} type="password" placeholder="Enter your password" />
                 <br />
-                {error.password && <span id="password-error" style={{ color: "red" }}>{error.password}</span>}
+                <span id="password-error" style={{ color: "red" }}>{error.password}</span>
                 <br />
                 <button id="submit-form-btn" type="submit">Submit</button>
             </form>
