@@ -1,0 +1,31 @@
+it("handling incorrect form submission", () => {
+
+    cy.get("input#input-email").type("abcdefgh@gmail.com");
+
+    cy.get("input#input-password").type("12");
+
+    cy.get("button#submit-form-btn").click();
+
+    cy.wait(4000);
+
+    cy.get("#user-error").should("have.text","User not found")
+
+    cy.get("#password-error").should("have.text","")
+
+    cy.reload();
+
+   
+
+    cy.get("input#input-email").type("abc@gmail.com");
+
+    cy.get("input#input-password").type("123");
+
+    cy.get("button#submit-form-btn").click();
+
+    cy.wait(4000);
+
+    cy.get("#user-error").should("have.text","")
+
+    cy.get("#password-error").should("have.text","Password Incorrect")
+
+    cy.reload();

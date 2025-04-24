@@ -9,7 +9,7 @@ const App = () => {
     })
 
     let userCred = useMemo(() => {
-        return { email: "dev@gmail.com", password: "dev1234" }
+        return { email: "abc@gmail.com", password: "12" }
     }, [])
 
     function validateForm(email, password) {
@@ -31,15 +31,17 @@ const App = () => {
 
     function handleSubmit(e) {
         e.preventDefault()
-        if (validateForm(email.current.value, password.current.value)) {
-            setError({
-                email: "",
-                password: ""
-            })
-            console.log("Logged In Successfully")
-            email.current.value = ""
-            password.current.value = ""
-        }
+        setTimeout(() => {
+            if (validateForm(email.current.value, password.current.value)) {
+                setError({
+                    email: "",
+                    password: ""
+                })
+                console.log("Logged In Successfully")
+                email.current.value = ""
+                password.current.value = ""
+            }
+        }, 4000)
     }
 
     //console.log(error)
